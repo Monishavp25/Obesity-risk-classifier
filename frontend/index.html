@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Obesity Risk Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>Obesity Risk <span>Dashboard</span></h1>
+    <p>Move the controls and watch your BMI and habit profile update live. Press Predict to get the model's risk category.</p>
+  </div>
+  <div class="presets"><small>Quick profiles</small><span id="presets"></span></div>
+</header>
+<main>
+  <section class="card" id="inputs"><h2>Your profile</h2><div id="form"></div></section>
+  <section class="stack">
+    <div class="card">
+      <h2>Live BMI</h2>
+      <svg id="gauge" viewBox="0 0 240 150"></svg>
+      <div class="bmi"><b id="bmiVal">--</b><span id="bmiZone"></span></div>
+    </div>
+    <div class="card"><h2>Habit radar</h2><svg id="radar" viewBox="-135 -115 270 235"></svg></div>
+  </section>
+  <section class="card">
+    <h2>Model prediction</h2>
+    <button id="go">Predict risk category</button>
+    <p id="err" hidden></p>
+    <div id="out" hidden>
+      <div id="label"></div><div id="conf"></div>
+      <div id="scale"></div><div class="ends"><span>Low</span><span>High risk</span></div>
+      <h3>Class probabilities</h3><div id="bars"></div>
+    </div>
+    <p class="note">Educational screening aid, not a medical diagnosis.</p>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
